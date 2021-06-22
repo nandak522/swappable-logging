@@ -24,7 +24,7 @@ func (l *LogrusLogger) Error(args ...interface{}) {
 	l.log.Error(args...)
 }
 
-func CreateLogger() *LogrusLogger {
+func CreateLogrusLogger() *LogrusLogger {
 	originalLogger := logrus.Logger{}
 	originalLogger.SetFormatter(&logrus.JSONFormatter{
 		DisableHTMLEscape: true,

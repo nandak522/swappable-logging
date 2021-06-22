@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	var requiredLogLevel string
-	flag.StringVarP(&requiredLogLevel, "log-level", "l", "info", "Required log level. debug/info/warn/error.")
+	var requiredLogger string
+	flag.StringVarP(&requiredLogger, "logger", "l", "logrus", "Required logger. logrus/zap.")
 	var printHelp bool
 	flag.BoolVarP(&printHelp, "help", "h", false, "Prints this help content.")
 	flag.Parse()
@@ -16,6 +16,6 @@ func main() {
 		return
 	}
 
-	svc := service.CreateService()
+	svc := service.CreateService(requiredLogger)
 	service.DoSomething(&svc, "Serve the traffic")
 }

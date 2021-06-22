@@ -10,7 +10,6 @@ type Service struct {
 
 func CreateService(loggerName string) Service {
 	svc := Service{
-		// log: logger.CreateLogger("logrus"),
 		log: logger.CreateLogger(loggerName),
 	}
 	return svc

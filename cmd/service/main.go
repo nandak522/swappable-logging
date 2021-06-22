@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/none-da/swappable_logging/pkg/service"
+	"github.com/none-da/swappable-logging/pkg/service"
 	flag "github.com/spf13/pflag"
 )
 

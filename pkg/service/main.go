@@ -1,7 +1,7 @@
 package service
 
 import (
-	logger "github.com/none-da/swappable_logging/pkg/logger"
+	logger "github.com/none-da/swappable-logging/pkg/logger"
 )
 
 type Service struct {

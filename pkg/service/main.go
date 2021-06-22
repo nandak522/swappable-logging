@@ -8,11 +8,11 @@ type Service struct {
 	log logger.Logger
 }
 
-func CreateService() *Service {
+func CreateService() Service {
 	svc := Service{
 		log: logger.CreateLogger(),
 	}
-	return &svc
+	return svc
 }
 
 func DoSomething(svc *Service, action string) {

@@ -1,6 +1,9 @@
 package logger
 
 import (
+	"os"
+	"time"
+
 	"github.com/sirupsen/logrus"
 )
 
@@ -22,7 +25,14 @@ func (l *LogrusLogger) Error(args ...interface{}) {
 }
 
 func CreateLogger() *LogrusLogger {
+	originalLogger := logrus.Logger{}
+	originalLogger.SetFormatter(&logrus.JSONFormatter{
+		DisableHTMLEscape: true,
+		TimestampFormat:   time.RFC3339,
+	})
+	originalLogger.SetLevel(logrus.DebugLevel)
+	originalLogger.SetOutput(os.Stdout)
 	return &LogrusLogger{
-		log: &logrus.Logger{},
+		log: &originalLogger,
 	}
 }
